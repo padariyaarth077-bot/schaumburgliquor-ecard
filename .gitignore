@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.log
+gallery-contact-sheet.jpg
+qa/
+.wrangler/
+.dev.vars
+
+.env.*
+!.env.example
+.dev.vars.*
+.DS_Store
+Thumbs.db
