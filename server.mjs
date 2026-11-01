@@ -51,4 +51,4 @@ export const server=http.createServer(async(req,res)=>{
   } catch(error) { if(!res.headersSent) json(error.code==='ENOENT'?404:500,{error:error.code==='ENOENT'?'Not found.':'Something went wrong. Please try again.'}); else res.end(); }
 });
 server.requestTimeout=30000;
-server.listen(port,'127.0.0.1',()=>console.log(`Schaumburg Liquors: http://localhost:${port}/schaumburg-liquors`));
+server.listen(port,process.env.HOST || '127.0.0.1',()=>console.log(`Schaumburg Liquors: http://localhost:${port}/schaumburg-liquors`));
