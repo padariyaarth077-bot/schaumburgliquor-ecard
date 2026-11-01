@@ -57,3 +57,8 @@ The public Cloudflare Worker entry is `worker.mjs`, configured in `wrangler.json
 The deployed Worker deliberately returns an unavailable response for AI generation and leaves the Google review link blank. The Node AI implementation remains available for the later integration, but setting Node `.env` values alone does not activate AI on Cloudflare. That next phase needs a Worker-compatible backend, server-side secrets, a verified Google review link, production rate limiting and a live end-to-end check.
 
 Live deployment: https://schaumburg-liquors-card.padariyaarth077.workers.dev/schaumburg-liquors
+
+
+## Hostinger deployment
+
+The `main` branch of `padariyaarth077-bot/schaumburgliquor-ecard` is connected to the Hostinger Web App for `connect.schaumburgliquor.com`. Runtime settings: Other framework, Node 24, root/output directory `.`, build command `npm run build`, entry file `server.mjs`. Set `HOST=0.0.0.0` and `PUBLIC_URL=https://connect.schaumburgliquor.com` in the hosting environment. Hostinger supplies the port. Leave AI credentials and the Google review destination unset until their later setup. Main-domain content is hosted separately.
